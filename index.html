@@ -42,6 +42,11 @@
                 scores[input.value]++;
             });
 
+            if (scores["E"] === 0 && scores["I"] === 0 && scores["J"] === 0 && scores["P"] === 0) {
+                document.getElementById("result").innerHTML = "Please answer all questions.";
+                return;
+            }
+
             let mbti = (scores["E"] > scores["I"] ? "E" : "I") + 
                        (scores["J"] > scores["P"] ? "J" : "P");
 
