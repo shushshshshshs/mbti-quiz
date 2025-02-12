@@ -4,54 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI Personality Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
-        .question { font-size: 18px; margin-bottom: 10px; }
-        .options label { display: block; margin: 5px 0; }
-        .btn { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; cursor: pointer; }
-        #result { font-size: 22px; font-weight: bold; margin-top: 20px; }
+        /* Aesthetic Color Palette */
+        :root {
+            --background: #F8EDEB; /* Soft beige-pink */
+            --card-bg: #FFF; /* White for the quiz card */
+            --primary: #D77A7A; /* Soft muted red */
+            --hover: #B86666; /* Slightly darker muted red */
+            --question-bg: #F3D6D6; /* Soft pinkish background for questions */
+            --option-bg: #F8D8D8; /* Lighter pink option background */
+            --result-bg: #F8BFBF; /* Soft pink for result */
+            --text-dark: #5A3D3D; /* Dark muted brown for text */
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: var(--card-bg);
+            padding: 30px;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--question-bg);
+            border-radius: 8px;
+        }
+
+        .options label {
+            display: block;
+            background: var(--option-bg);
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--hover);
+            transition: 0.3s;
+        }
+
+        .options label:hover {
+            background: var(--hover);
+            color: white;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--hover);
+        }
+
+        #result {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--result-bg);
+            border-radius: 8px;
+            color: var(--text-dark);
+        }
     </style>
 </head>
 <body>
-    <h2>MBTI Personality Test</h2>
-    <form id="quizForm">
-        <div class="question">1. I enjoy being around large groups of people.</div>
-        <div class="options">
-            <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
-            <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
-        </div>
 
-        <div class="question">2. I prefer to plan things in advance.</div>
-        <div class="options">
-            <label><input type="radio" name="q2" value="J"> Strongly Agree</label>
-            <label><input type="radio" name="q2" value="P"> Strongly Disagree</label>
-        </div>
-    </form>
+    <div class="container">
+        <h2>MBTI Personality Test</h2>
+        <form id="quizForm">
+            <!-- Extraversion (E) vs. Introversion (I) -->
+            <div class="question">1. I enjoy social gatherings.</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
+                <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
+            </div>
 
-    <!-- Button to calculate MBTI -->
-    <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
+            <div class="question">2. I feel drained after spending time with a large group.</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="I"> Strongly Agree</label>
+                <label><input type="radio" name="q2" value="E"> Strongly Disagree</label>
+            </div>
 
-    <!-- Result Display -->
-    <div id="result"></div>
+            <!-- Add more questions following the same format -->
+        </form>
 
-    <!-- JavaScript at the end for better performance -->
+        <!-- Button to calculate MBTI -->
+        <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
+
+        <!-- Result Display -->
+        <div id="result"></div>
+    </div>
+
     <script>
         function calculateMBTI() {
-            let scores = { E: 0, I: 0, J: 0, P: 0 };
+            let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
             document.querySelectorAll("input[type='radio']:checked").forEach(input => {
                 scores[input.value]++;
             });
 
-            if (scores["E"] === 0 && scores["I"] === 0 && scores["J"] === 0 && scores["P"] === 0) {
+            if (Object.values(scores).every(val => val === 0)) {
                 document.getElementById("result").innerHTML = "Please answer all questions.";
                 return;
             }
 
             let mbti = (scores["E"] > scores["I"] ? "E" : "I") + 
+                       (scores["S"] > scores["N"] ? "S" : "N") +
+                       (scores["T"] > scores["F"] ? "T" : "F") +
                        (scores["J"] > scores["P"] ? "J" : "P");
 
             document.getElementById("result").innerHTML = `Your MBTI Type: <strong>${mbti}</strong>`;
         }
     </script>
+
 </body>
 </html>
+
