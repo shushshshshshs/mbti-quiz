@@ -5,115 +5,472 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI Personality Quiz</title>
     <style>
-        /* Aesthetic Design */
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f5e1da; /* Light Beige from your palette */
-            color: #5b3b3b; /* Dark Brown */
-            margin: 20px;
-        }
-
-        h2 {
-            color: #3e2723; /* Darkest Brown */
-        }
-
-        .quiz-container {
-            background: #ffe5e5; /* Light pink */
-            width: 60%;
-            margin: auto;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .question {
-            font-size: 18px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .options label {
-            display: block;
-            background: #f8c8dc; /* Light blush */
-            padding: 10px;
-            margin: 5px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .options label:hover {
-            background: #e8a7c2; /* Darker pink on hover */
-        }
-
-        .btn {
-            background: #d96666; /* Soft red */
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #c15050;
-        }
-
-        #result {
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; background-color: #FAE6E2; color: #3D1C1C; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); }
+        .question { font-size: 18px; margin-bottom: 10px; font-weight: bold; }
+        .options { margin-bottom: 20px; }
+        .options label { display: block; background: #FADBD8; padding: 10px; border-radius: 5px; cursor: pointer; }
+        .options input { margin-right: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="quiz-container">
-        <h2>MBTI Personality Test</h2>
-        <form id="quizForm">
+<div class="container">
+    <h2>MBTI Personality Test</h2>
 
-            <!-- 50 Questions -->
-            <div class="question">1. I enjoy being around large groups of people.</div>
-            <div class="options">
-                <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
-                <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
-            </div>
+    <form id="quizForm">
 
-            <div class="question">2. I prefer to plan things in advance.</div>
-            <div class="options">
-                <label><input type="radio" name="q2" value="J"> Strongly Agree</label>
-                <label><input type="radio" name="q2" value="P"> Strongly Disagree</label>
-            </div>
+        <div class="question">1. I enjoy being around large groups of people.</div>
+        <div class="options">
+            <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
+            <label><input type="radio" name="q1" value="A"> Agree</label>
+            <label><input type="radio" name="q1" value="N"> Neutral</label>
+            <label><input type="radio" name="q1" value="D"> Disagree</label>
+            <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
+        </div>
 
-            <!-- Repeat similar structure for 48 more questions -->
-            <!-- Example of an added question -->
-            <div class="question">3. I make decisions based on facts rather than feelings.</div>
-            <div class="options">
-                <label><input type="radio" name="q3" value="T"> Strongly Agree</label>
-                <label><input type="radio" name="q3" value="F"> Strongly Disagree</label>
-            </div>
+        <div class="question">2. I prefer to plan things in advance.</div>
+        <div class="options">
+            <label><input type="radio" name="q2" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q2" value="A"> Agree</label>
+            <label><input type="radio" name="q2" value="N"> Neutral</label>
+            <label><input type="radio" name="q2" value="D"> Disagree</label>
+            <label><input type="radio" name="q2" value="P"> Strongly Disagree</label>
+        </div>
 
-            <div class="question">4. I get energy from spending time alone.</div>
-            <div class="options">
-                <label><input type="radio" name="q4" value="I"> Strongly Agree</label>
-                <label><input type="radio" name="q4" value="E"> Strongly Disagree</label>
-            </div>
+        <div class="question">3. I trust my instincts more than logical analysis.</div>
+        <div class="options">
+            <label><input type="radio" name="q3" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q3" value="A"> Agree</label>
+            <label><input type="radio" name="q3" value="N"> Neutral</label>
+            <label><input type="radio" name="q3" value="D"> Disagree</label>
+            <label><input type="radio" name="q3" value="S"> Strongly Disagree</label>
+        </div>
 
-            <!-- Add more questions up to 50... -->
+        <div class="question">4. I prefer sticking to a schedule rather than going with the flow.</div>
+        <div class="options">
+            <label><input type="radio" name="q4" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q4" value="A"> Agree</label>
+            <label><input type="radio" name="q4" value="N"> Neutral</label>
+            <label><input type="radio" name="q4" value="D"> Disagree</label>
+            <label><input type="radio" name="q4" value="P"> Strongly Disagree</label>
+        </div>
 
-        </form>
+        <div class="question">5. I am more emotional than logical when making decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q5" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q5" value="A"> Agree</label>
+            <label><input type="radio" name="q5" value="N"> Neutral</label>
+            <label><input type="radio" name="q5" value="D"> Disagree</label>
+            <label><input type="radio" name="q5" value="T"> Strongly Disagree</label>
+        </div>
 
-        <!-- Button to calculate MBTI -->
+        <div class="question">6. I enjoy deep conversations more than small talk.</div>
+        <div class="options">
+            <label><input type="radio" name="q6" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q6" value="A"> Agree</label>
+            <label><input type="radio" name="q6" value="N"> Neutral</label>
+            <label><input type="radio" name="q6" value="D"> Disagree</label>
+            <label><input type="radio" name="q6" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">7. I get energized by being around people.</div>
+        <div class="options">
+            <label><input type="radio" name="q7" value="E"> Strongly Agree</label>
+            <label><input type="radio" name="q7" value="A"> Agree</label>
+            <label><input type="radio" name="q7" value="N"> Neutral</label>
+            <label><input type="radio" name="q7" value="D"> Disagree</label>
+            <label><input type="radio" name="q7" value="I"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">8. I prefer analyzing data over creative thinking.</div>
+        <div class="options">
+            <label><input type="radio" name="q8" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q8" value="A"> Agree</label>
+            <label><input type="radio" name="q8" value="N"> Neutral</label>
+            <label><input type="radio" name="q8" value="D"> Disagree</label>
+            <label><input type="radio" name="q8" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">9. I often leave things until the last minute.</div>
+        <div class="options">
+            <label><input type="radio" name="q9" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q9" value="A"> Agree</label>
+            <label><input type="radio" name="q9" value="N"> Neutral</label>
+            <label><input type="radio" name="q9" value="D"> Disagree</label>
+            <label><input type="radio" name="q9" value="J"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">10. I make decisions based on logic rather than feelings.</div>
+        <div class="options">
+            <label><input type="radio" name="q10" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q10" value="A"> Agree</label>
+            <label><input type="radio" name="q10" value="N"> Neutral</label>
+            <label><input type="radio" name="q10" value="D"> Disagree</label>
+            <label><input type="radio" name="q10" value="F"> Strongly Disagree</label>
+        </div>
+
+    </form>
+</div>
+
+        <div class="question">11. I prefer having a structured routine rather than being spontaneous.</div>
+        <div class="options">
+            <label><input type="radio" name="q11" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q11" value="A"> Agree</label>
+            <label><input type="radio" name="q11" value="N"> Neutral</label>
+            <label><input type="radio" name="q11" value="D"> Disagree</label>
+            <label><input type="radio" name="q11" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">12. I find social gatherings to be exhausting rather than energizing.</div>
+        <div class="options">
+            <label><input type="radio" name="q12" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q12" value="A"> Agree</label>
+            <label><input type="radio" name="q12" value="N"> Neutral</label>
+            <label><input type="radio" name="q12" value="D"> Disagree</label>
+            <label><input type="radio" name="q12" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">13. I prefer working with data and numbers over creative ideas.</div>
+        <div class="options">
+            <label><input type="radio" name="q13" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q13" value="A"> Agree</label>
+            <label><input type="radio" name="q13" value="N"> Neutral</label>
+            <label><input type="radio" name="q13" value="D"> Disagree</label>
+            <label><input type="radio" name="q13" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">14. I make decisions based on logic and facts rather than emotions.</div>
+        <div class="options">
+            <label><input type="radio" name="q14" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q14" value="A"> Agree</label>
+            <label><input type="radio" name="q14" value="N"> Neutral</label>
+            <label><input type="radio" name="q14" value="D"> Disagree</label>
+            <label><input type="radio" name="q14" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">15. I enjoy spending time alone more than in a group setting.</div>
+        <div class="options">
+            <label><input type="radio" name="q15" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q15" value="A"> Agree</label>
+            <label><input type="radio" name="q15" value="N"> Neutral</label>
+            <label><input type="radio" name="q15" value="D"> Disagree</label>
+            <label><input type="radio" name="q15" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">16. I tend to stick to tried-and-true methods instead of experimenting.</div>
+        <div class="options">
+            <label><input type="radio" name="q16" value="S"> Strongly Agree</label>
+            <label><input type="radio" name="q16" value="A"> Agree</label>
+            <label><input type="radio" name="q16" value="N"> Neutral</label>
+            <label><input type="radio" name="q16" value="D"> Disagree</label>
+            <label><input type="radio" name="q16" value="N"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">17. I like to think about possibilities and the future more than focusing on the present moment.</div>
+        <div class="options">
+            <label><input type="radio" name="q17" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q17" value="A"> Agree</label>
+            <label><input type="radio" name="q17" value="N"> Neutral</label>
+            <label><input type="radio" name="q17" value="D"> Disagree</label>
+            <label><input type="radio" name="q17" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">18. I prefer working in a fast-paced, high-energy environment.</div>
+        <div class="options">
+            <label><input type="radio" name="q18" value="E"> Strongly Agree</label>
+            <label><input type="radio" name="q18" value="A"> Agree</label>
+            <label><input type="radio" name="q18" value="N"> Neutral</label>
+            <label><input type="radio" name="q18" value="D"> Disagree</label>
+            <label><input type="radio" name="q18" value="I"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">19. I tend to follow my heart rather than my head when making decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q19" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q19" value="A"> Agree</label>
+            <label><input type="radio" name="q19" value="N"> Neutral</label>
+            <label><input type="radio" name="q19" value="D"> Disagree</label>
+            <label><input type="radio" name="q19" value="T"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">20. I often make impulsive decisions instead of thinking them through.</div>
+        <div class="options">
+            <label><input type="radio" name="q20" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q20" value="A"> Agree</label>
+            <label><input type="radio" name="q20" value="N"> Neutral</label>
+            <label><input type="radio" name="q20" value="D"> Disagree</label>
+            <label><input type="radio" name="q20" value="J"> Strongly Disagree</label>
+        </div>
+        <div class="question">21. I feel comfortable taking the lead in a group project.</div>
+        <div class="options">
+            <label><input type="radio" name="q21" value="E"> Strongly Agree</label>
+            <label><input type="radio" name="q21" value="A"> Agree</label>
+            <label><input type="radio" name="q21" value="N"> Neutral</label>
+            <label><input type="radio" name="q21" value="D"> Disagree</label>
+            <label><input type="radio" name="q21" value="I"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">22. I enjoy solving complex problems and puzzles.</div>
+        <div class="options">
+            <label><input type="radio" name="q22" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q22" value="A"> Agree</label>
+            <label><input type="radio" name="q22" value="N"> Neutral</label>
+            <label><input type="radio" name="q22" value="D"> Disagree</label>
+            <label><input type="radio" name="q22" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">23. I find it difficult to express my emotions.</div>
+        <div class="options">
+            <label><input type="radio" name="q23" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q23" value="A"> Agree</label>
+            <label><input type="radio" name="q23" value="N"> Neutral</label>
+            <label><input type="radio" name="q23" value="D"> Disagree</label>
+            <label><input type="radio" name="q23" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">24. I prefer to work independently rather than in a team.</div>
+        <div class="options">
+            <label><input type="radio" name="q24" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q24" value="A"> Agree</label>
+            <label><input type="radio" name="q24" value="N"> Neutral</label>
+            <label><input type="radio" name="q24" value="D"> Disagree</label>
+            <label><input type="radio" name="q24" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">25. I often trust my intuition over logic.</div>
+        <div class="options">
+            <label><input type="radio" name="q25" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q25" value="A"> Agree</label>
+            <label><input type="radio" name="q25" value="N"> Neutral</label>
+            <label><input type="radio" name="q25" value="D"> Disagree</label>
+            <label><input type="radio" name="q25" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">26. I tend to focus more on details than the big picture.</div>
+        <div class="options">
+            <label><input type="radio" name="q26" value="S"> Strongly Agree</label>
+            <label><input type="radio" name="q26" value="A"> Agree</label>
+            <label><input type="radio" name="q26" value="N"> Neutral</label>
+            <label><input type="radio" name="q26" value="D"> Disagree</label>
+            <label><input type="radio" name="q26" value="N"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">27. I tend to be more optimistic about life than pessimistic.</div>
+        <div class="options">
+            <label><input type="radio" name="q27" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q27" value="A"> Agree</label>
+            <label><input type="radio" name="q27" value="N"> Neutral</label>
+            <label><input type="radio" name="q27" value="D"> Disagree</label>
+            <label><input type="radio" name="q27" value="J"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">28. I like to keep my workspace organized and tidy.</div>
+        <div class="options">
+            <label><input type="radio" name="q28" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q28" value="A"> Agree</label>
+            <label><input type="radio" name="q28" value="N"> Neutral</label>
+            <label><input type="radio" name="q28" value="D"> Disagree</label>
+            <label><input type="radio" name="q28" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">29. I enjoy taking risks and trying new experiences.</div>
+        <div class="options">
+            <label><input type="radio" name="q29" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q29" value="A"> Agree</label>
+            <label><input type="radio" name="q29" value="N"> Neutral</label>
+            <label><input type="radio" name="q29" value="D"> Disagree</label>
+            <label><input type="radio" name="q29" value="J"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">30. I often rely on rules and guidelines to make decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q30" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q30" value="A"> Agree</label>
+            <label><input type="radio" name="q30" value="N"> Neutral</label>
+            <label><input type="radio" name="q30" value="D"> Disagree</label>
+            <label><input type="radio" name="q30" value="P"> Strongly Disagree</label>
+        </div>
+        <div class="question">31. I enjoy spending time alone to recharge.</div>
+        <div class="options">
+            <label><input type="radio" name="q31" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q31" value="A"> Agree</label>
+            <label><input type="radio" name="q31" value="N"> Neutral</label>
+            <label><input type="radio" name="q31" value="D"> Disagree</label>
+            <label><input type="radio" name="q31" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">32. I often analyze situations logically rather than emotionally.</div>
+        <div class="options">
+            <label><input type="radio" name="q32" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q32" value="A"> Agree</label>
+            <label><input type="radio" name="q32" value="N"> Neutral</label>
+            <label><input type="radio" name="q32" value="D"> Disagree</label>
+            <label><input type="radio" name="q32" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">33. I like to keep my options open rather than make quick decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q33" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q33" value="A"> Agree</label>
+            <label><input type="radio" name="q33" value="N"> Neutral</label>
+            <label><input type="radio" name="q33" value="D"> Disagree</label>
+            <label><input type="radio" name="q33" value="J"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">34. I find it easy to empathize with others.</div>
+        <div class="options">
+            <label><input type="radio" name="q34" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q34" value="A"> Agree</label>
+            <label><input type="radio" name="q34" value="N"> Neutral</label>
+            <label><input type="radio" name="q34" value="D"> Disagree</label>
+            <label><input type="radio" name="q34" value="T"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">35. I prefer a structured and organized environment.</div>
+        <div class="options">
+            <label><input type="radio" name="q35" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q35" value="A"> Agree</label>
+            <label><input type="radio" name="q35" value="N"> Neutral</label>
+            <label><input type="radio" name="q35" value="D"> Disagree</label>
+            <label><input type="radio" name="q35" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">36. I often get excited about new ideas and possibilities.</div>
+        <div class="options">
+            <label><input type="radio" name="q36" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q36" value="A"> Agree</label>
+            <label><input type="radio" name="q36" value="N"> Neutral</label>
+            <label><input type="radio" name="q36" value="D"> Disagree</label>
+            <label><input type="radio" name="q36" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">37. I prefer to focus on facts rather than abstract ideas.</div>
+        <div class="options">
+            <label><input type="radio" name="q37" value="S"> Strongly Agree</label>
+            <label><input type="radio" name="q37" value="A"> Agree</label>
+            <label><input type="radio" name="q37" value="N"> Neutral</label>
+            <label><input type="radio" name="q37" value="D"> Disagree</label>
+            <label><input type="radio" name="q37" value="N"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">38. I like to follow a daily routine.</div>
+        <div class="options">
+            <label><input type="radio" name="q38" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q38" value="A"> Agree</label>
+            <label><input type="radio" name="q38" value="N"> Neutral</label>
+            <label><input type="radio" name="q38" value="D"> Disagree</label>
+            <label><input type="radio" name="q38" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">39. I often make decisions based on emotions rather than logic.</div>
+        <div class="options">
+            <label><input type="radio" name="q39" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q39" value="A"> Agree</label>
+            <label><input type="radio" name="q39" value="N"> Neutral</label>
+            <label><input type="radio" name="q39" value="D"> Disagree</label>
+            <label><input type="radio" name="q39" value="T"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">40. I like to be spontaneous rather than plan things out.</div>
+        <div class="options">
+            <label><input type="radio" name="q40" value="P"> Strongly Agree</label>
+            <label><input type="radio" name="q40" value="A"> Agree</label>
+            <label><input type="radio" name="q40" value="N"> Neutral</label>
+            <label><input type="radio" name="q40" value="D"> Disagree</label>
+            <label><input type="radio" name="q40" value="J"> Strongly Disagree</label>
+        </div>
+        <div class="question">41. I feel drained after socializing for long periods.</div>
+        <div class="options">
+            <label><input type="radio" name="q41" value="I"> Strongly Agree</label>
+            <label><input type="radio" name="q41" value="A"> Agree</label>
+            <label><input type="radio" name="q41" value="N"> Neutral</label>
+            <label><input type="radio" name="q41" value="D"> Disagree</label>
+            <label><input type="radio" name="q41" value="E"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">42. I often trust my instincts when making decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q42" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q42" value="A"> Agree</label>
+            <label><input type="radio" name="q42" value="N"> Neutral</label>
+            <label><input type="radio" name="q42" value="D"> Disagree</label>
+            <label><input type="radio" name="q42" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">43. I enjoy working with numbers and data more than working with people.</div>
+        <div class="options">
+            <label><input type="radio" name="q43" value="T"> Strongly Agree</label>
+            <label><input type="radio" name="q43" value="A"> Agree</label>
+            <label><input type="radio" name="q43" value="N"> Neutral</label>
+            <label><input type="radio" name="q43" value="D"> Disagree</label>
+            <label><input type="radio" name="q43" value="F"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">44. I tend to avoid conflict whenever possible.</div>
+        <div class="options">
+            <label><input type="radio" name="q44" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q44" value="A"> Agree</label>
+            <label><input type="radio" name="q44" value="N"> Neutral</label>
+            <label><input type="radio" name="q44" value="D"> Disagree</label>
+            <label><input type="radio" name="q44" value="T"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">45. I like sticking to schedules rather than being flexible.</div>
+        <div class="options">
+            <label><input type="radio" name="q45" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q45" value="A"> Agree</label>
+            <label><input type="radio" name="q45" value="N"> Neutral</label>
+            <label><input type="radio" name="q45" value="D"> Disagree</label>
+            <label><input type="radio" name="q45" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">46. I enjoy brainstorming new and creative ideas.</div>
+        <div class="options">
+            <label><input type="radio" name="q46" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q46" value="A"> Agree</label>
+            <label><input type="radio" name="q46" value="N"> Neutral</label>
+            <label><input type="radio" name="q46" value="D"> Disagree</label>
+            <label><input type="radio" name="q46" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">47. I tend to focus on the present rather than the future.</div>
+        <div class="options">
+            <label><input type="radio" name="q47" value="S"> Strongly Agree</label>
+            <label><input type="radio" name="q47" value="A"> Agree</label>
+            <label><input type="radio" name="q47" value="N"> Neutral</label>
+            <label><input type="radio" name="q47" value="D"> Disagree</label>
+            <label><input type="radio" name="q47" value="N"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">48. I am comfortable making decisions quickly.</div>
+        <div class="options">
+            <label><input type="radio" name="q48" value="J"> Strongly Agree</label>
+            <label><input type="radio" name="q48" value="A"> Agree</label>
+            <label><input type="radio" name="q48" value="N"> Neutral</label>
+            <label><input type="radio" name="q48" value="D"> Disagree</label>
+            <label><input type="radio" name="q48" value="P"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">49. I am more interested in theories and concepts than practical applications.</div>
+        <div class="options">
+            <label><input type="radio" name="q49" value="N"> Strongly Agree</label>
+            <label><input type="radio" name="q49" value="A"> Agree</label>
+            <label><input type="radio" name="q49" value="N"> Neutral</label>
+            <label><input type="radio" name="q49" value="D"> Disagree</label>
+            <label><input type="radio" name="q49" value="S"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">50. I often follow my heart rather than my head when making decisions.</div>
+        <div class="options">
+            <label><input type="radio" name="q50" value="F"> Strongly Agree</label>
+            <label><input type="radio" name="q50" value="A"> Agree</label>
+            <label><input type="radio" name="q50" value="N"> Neutral</label>
+            <label><input type="radio" name="q50" value="D"> Disagree</label>
+            <label><input type="radio" name="q50" value="T"> Strongly Disagree</label>
+        </div>
         <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
-
-        <!-- Result Display -->
         <div id="result"></div>
-    </div>
-
     <script>
         function calculateMBTI() {
             let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
@@ -122,9 +479,9 @@
                 scores[input.value]++;
             });
 
-            // If any category has no selections, alert user
-            if (Object.values(scores).some(value => value === 0)) {
-                document.getElementById("result").innerHTML = "Please answer all questions.";
+            // Check if all questions were answered
+            if (Object.values(scores).reduce((a, b) => a + b, 0) < 50) {
+                document.getElementById("result").innerHTML = "<span style='color:red;'>Please answer all questions.</span>";
                 return;
             }
 
@@ -137,6 +494,3 @@
             document.getElementById("result").innerHTML = `Your MBTI Type: <strong>${mbti}</strong>`;
         }
     </script>
-
-</body>
-</html>
