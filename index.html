@@ -4,183 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBTI Personality Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Aesthetic Color Palette */
-        :root {
-            --background: #F8EDEB;
-            --card-bg: #FFF;
-            --primary: #D77A7A;
-            --hover: #B86666;
-            --question-bg: #F3D6D6;
-            --option-bg: #F8D8D8;
-            --result-bg: #F8BFBF;
-            --text-dark: #5A3D3D;
-        }
-
+        /* Aesthetic Design */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background);
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            background: var(--card-bg);
-            padding: 30px;
-            margin: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f5e1da; /* Light Beige from your palette */
+            color: #5b3b3b; /* Dark Brown */
+            margin: 20px;
         }
 
         h2 {
-            font-weight: 600;
-            color: var(--text-dark);
+            color: #3e2723; /* Darkest Brown */
+        }
+
+        .quiz-container {
+            background: #ffe5e5; /* Light pink */
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .question {
             font-size: 18px;
-            font-weight: 500;
-            margin: 20px 0;
-            padding: 15px;
-            background: var(--question-bg);
-            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
         }
 
         .options label {
             display: block;
-            background: var(--option-bg);
-            padding: 12px;
-            margin: 5px 0;
-            border-radius: 6px;
+            background: #f8c8dc; /* Light blush */
+            padding: 10px;
+            margin: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            border: 1px solid var(--hover);
             transition: 0.3s;
         }
 
         .options label:hover {
-            background: var(--hover);
-            color: white;
-        }
-
-        input[type="radio"] {
-            margin-right: 10px;
+            background: #e8a7c2; /* Darker pink on hover */
         }
 
         .btn {
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: var(--primary);
+            background: #d96666; /* Soft red */
             color: white;
+            padding: 12px 20px;
             border: none;
-            cursor: pointer;
             border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
             font-size: 18px;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: var(--hover);
+            background: #c15050;
         }
 
         #result {
             font-size: 22px;
             font-weight: bold;
             margin-top: 20px;
-            padding: 15px;
-            background: var(--result-bg);
-            border-radius: 8px;
-            color: var(--text-dark);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="quiz-container">
         <h2>MBTI Personality Test</h2>
         <form id="quizForm">
-            <!-- 50 MBTI Questions -->
 
-            <!-- Extraversion (E) vs. Introversion (I) -->
-            <div class="question">1. I enjoy social gatherings.</div>
+            <!-- 50 Questions -->
+            <div class="question">1. I enjoy being around large groups of people.</div>
             <div class="options">
                 <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
                 <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
             </div>
 
-            <div class="question">2. I feel drained after spending time with a large group.</div>
+            <div class="question">2. I prefer to plan things in advance.</div>
             <div class="options">
-                <label><input type="radio" name="q2" value="I"> Strongly Agree</label>
-                <label><input type="radio" name="q2" value="E"> Strongly Disagree</label>
+                <label><input type="radio" name="q2" value="J"> Strongly Agree</label>
+                <label><input type="radio" name="q2" value="P"> Strongly Disagree</label>
             </div>
 
-            <div class="question">3. I find it easy to start conversations with strangers.</div>
+            <!-- Repeat similar structure for 48 more questions -->
+            <!-- Example of an added question -->
+            <div class="question">3. I make decisions based on facts rather than feelings.</div>
             <div class="options">
-                <label><input type="radio" name="q3" value="E"> Strongly Agree</label>
-                <label><input type="radio" name="q3" value="I"> Strongly Disagree</label>
+                <label><input type="radio" name="q3" value="T"> Strongly Agree</label>
+                <label><input type="radio" name="q3" value="F"> Strongly Disagree</label>
             </div>
 
-            <!-- Sensing (S) vs. Intuition (N) -->
-            <div class="question">4. I rely on facts rather than abstract ideas.</div>
+            <div class="question">4. I get energy from spending time alone.</div>
             <div class="options">
-                <label><input type="radio" name="q4" value="S"> Strongly Agree</label>
-                <label><input type="radio" name="q4" value="N"> Strongly Disagree</label>
+                <label><input type="radio" name="q4" value="I"> Strongly Agree</label>
+                <label><input type="radio" name="q4" value="E"> Strongly Disagree</label>
             </div>
 
-            <div class="question">5. I enjoy brainstorming creative ideas over analyzing data.</div>
-            <div class="options">
-                <label><input type="radio" name="q5" value="N"> Strongly Agree</label>
-                <label><input type="radio" name="q5" value="S"> Strongly Disagree</label>
-            </div>
+            <!-- Add more questions up to 50... -->
 
-            <!-- Thinking (T) vs. Feeling (F) -->
-            <div class="question">6. I make decisions based on logic rather than emotions.</div>
-            <div class="options">
-                <label><input type="radio" name="q6" value="T"> Strongly Agree</label>
-                <label><input type="radio" name="q6" value="F"> Strongly Disagree</label>
-            </div>
-
-            <div class="question">7. I prioritize people’s feelings over efficiency.</div>
-            <div class="options">
-                <label><input type="radio" name="q7" value="F"> Strongly Agree</label>
-                <label><input type="radio" name="q7" value="T"> Strongly Disagree</label>
-            </div>
-
-            <!-- Judging (J) vs. Perceiving (P) -->
-            <div class="question">8. I like to plan my day rather than go with the flow.</div>
-            <div class="options">
-                <label><input type="radio" name="q8" value="J"> Strongly Agree</label>
-                <label><input type="radio" name="q8" value="P"> Strongly Disagree</label>
-            </div>
-
-            <div class="question">9. I often leave things until the last minute.</div>
-            <div class="options">
-                <label><input type="radio" name="q9" value="P"> Strongly Agree</label>
-                <label><input type="radio" name="q9" value="J"> Strongly Disagree</label>
-            </div>
-
-            <!-- More questions up to 50 can be added following this pattern -->
         </form>
 
+        <!-- Button to calculate MBTI -->
         <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
+
+        <!-- Result Display -->
         <div id="result"></div>
     </div>
 
     <script>
         function calculateMBTI() {
             let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
             document.querySelectorAll("input[type='radio']:checked").forEach(input => {
                 scores[input.value]++;
             });
 
-            if (Object.values(scores).every(val => val === 0)) {
+            // If any category has no selections, alert user
+            if (Object.values(scores).some(value => value === 0)) {
                 document.getElementById("result").innerHTML = "Please answer all questions.";
                 return;
             }
 
-            let mbti = (scores["E"] > scores["I"] ? "E" : "I") + 
+            // Determine MBTI Type
+            let mbti = (scores["E"] > scores["I"] ? "E" : "I") +
                        (scores["S"] > scores["N"] ? "S" : "N") +
                        (scores["T"] > scores["F"] ? "T" : "F") +
                        (scores["J"] > scores["P"] ? "J" : "P");
