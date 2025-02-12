@@ -8,17 +8,16 @@
     <style>
         /* Aesthetic Color Palette */
         :root {
-            --background: #F8EDEB; /* Soft beige-pink */
-            --card-bg: #FFF; /* White for the quiz card */
-            --primary: #D77A7A; /* Soft muted red */
-            --hover: #B86666; /* Slightly darker muted red */
-            --question-bg: #F3D6D6; /* Soft pinkish background for questions */
-            --option-bg: #F8D8D8; /* Lighter pink option background */
-            --result-bg: #F8BFBF; /* Soft pink for result */
-            --text-dark: #5A3D3D; /* Dark muted brown for text */
+            --background: #F8EDEB;
+            --card-bg: #FFF;
+            --primary: #D77A7A;
+            --hover: #B86666;
+            --question-bg: #F3D6D6;
+            --option-bg: #F8D8D8;
+            --result-bg: #F8BFBF;
+            --text-dark: #5A3D3D;
         }
 
-        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--background);
@@ -102,6 +101,8 @@
     <div class="container">
         <h2>MBTI Personality Test</h2>
         <form id="quizForm">
+            <!-- 50 MBTI Questions -->
+
             <!-- Extraversion (E) vs. Introversion (I) -->
             <div class="question">1. I enjoy social gatherings.</div>
             <div class="options">
@@ -115,13 +116,55 @@
                 <label><input type="radio" name="q2" value="E"> Strongly Disagree</label>
             </div>
 
-            <!-- Add more questions following the same format -->
+            <div class="question">3. I find it easy to start conversations with strangers.</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="E"> Strongly Agree</label>
+                <label><input type="radio" name="q3" value="I"> Strongly Disagree</label>
+            </div>
+
+            <!-- Sensing (S) vs. Intuition (N) -->
+            <div class="question">4. I rely on facts rather than abstract ideas.</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="S"> Strongly Agree</label>
+                <label><input type="radio" name="q4" value="N"> Strongly Disagree</label>
+            </div>
+
+            <div class="question">5. I enjoy brainstorming creative ideas over analyzing data.</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="N"> Strongly Agree</label>
+                <label><input type="radio" name="q5" value="S"> Strongly Disagree</label>
+            </div>
+
+            <!-- Thinking (T) vs. Feeling (F) -->
+            <div class="question">6. I make decisions based on logic rather than emotions.</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="T"> Strongly Agree</label>
+                <label><input type="radio" name="q6" value="F"> Strongly Disagree</label>
+            </div>
+
+            <div class="question">7. I prioritize people’s feelings over efficiency.</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="F"> Strongly Agree</label>
+                <label><input type="radio" name="q7" value="T"> Strongly Disagree</label>
+            </div>
+
+            <!-- Judging (J) vs. Perceiving (P) -->
+            <div class="question">8. I like to plan my day rather than go with the flow.</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="J"> Strongly Agree</label>
+                <label><input type="radio" name="q8" value="P"> Strongly Disagree</label>
+            </div>
+
+            <div class="question">9. I often leave things until the last minute.</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="P"> Strongly Agree</label>
+                <label><input type="radio" name="q9" value="J"> Strongly Disagree</label>
+            </div>
+
+            <!-- More questions up to 50 can be added following this pattern -->
         </form>
 
-        <!-- Button to calculate MBTI -->
         <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
-
-        <!-- Result Display -->
         <div id="result"></div>
     </div>
 
@@ -148,4 +191,3 @@
 
 </body>
 </html>
-
