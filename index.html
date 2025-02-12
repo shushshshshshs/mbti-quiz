@@ -12,6 +12,22 @@
         #result { font-size: 22px; font-weight: bold; margin-top: 20px; }
     </style>
 </head>
+<button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
+<div id="result"></div>
+
+<script>
+    function calculateMBTI() {
+        let scores = { E: 0, I: 0, J: 0, P: 0 };
+        document.querySelectorAll("input[type='radio']:checked").forEach(input => {
+            scores[input.value]++;
+        });
+
+        let mbti = (scores["E"] > scores["I"] ? "E" : "I") + 
+                   (scores["J"] > scores["P"] ? "J" : "P");
+
+        document.getElementById("result").innerHTML = `Your MBTI Type: <strong>${mbti}</strong>`;
+    }
+</script>
 <body>
     <h2>MBTI Personality Test</h2>
     <form id="quizForm">
@@ -20,8 +36,17 @@
             <label><input type="radio" name="q1" value="E"> Strongly Agree</label>
             <label><input type="radio" name="q1" value="I"> Strongly Disagree</label>
         </div>
+
         <div class="question">2. I prefer to plan things in advance.</div>
         <div class="options">
             <label><input type="radio" name="q2" value="J"> Strongly Agree</label>
             <label><input type="radio" name="q2" value="P"> Strongly Disagree</label>
         </div>
+    </form>
+
+    <!-- Button to calculate MBTI -->
+    <button type="button" class="btn" onclick="calculateMBTI()">See My Type</button>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+</body>
