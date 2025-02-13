@@ -531,26 +531,3 @@
     <label><input type="radio" name="q50" value="S"><span></span> Strongly Disagree</label>
 </div>
 
-<!-- Final Submission Button -->
-<button class="btn" type="button" onclick="submitQuiz()">Get Your Results!</button>
-function submitQuiz() {
-    let result = "";
-    const letters = { "E": 0, "I": 0, "S": 0, "N": 0, "T": 0, "F": 0, "J": 0, "P": 0 };
-
-    for (let i = 1; i <= 50; i++) {
-        const answer = document.querySelector(`input[name="q${i}"]:checked`);
-        if (answer) {
-            letters[answer.value]++;
-        }
-    }
-
-    // Determine MBTI type
-    result += (letters["E"] >= letters["I"]) ? "E" : "I";
-    result += (letters["S"] >= letters["N"]) ? "S" : "N";
-    result += (letters["T"] >= letters["F"]) ? "T" : "F";
-    result += (letters["J"] >= letters["P"]) ? "J" : "P";
-
-    // Redirect to results page with MBTI type as a parameter
-    window.location.href = `results.html?type=${result}`;
-}
-
