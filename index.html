@@ -457,7 +457,8 @@
     </script>
 </body>
 </html>
-<!DOCTYPE html>
+        
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -532,11 +533,6 @@
             background-color: #B35E5E;
         }
     </style>
-    <script>
-        function submitQuiz() {
-            window.location.href = "results.html";
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -558,13 +554,13 @@
                 <label><input type="radio" name="q42" value="P"><span></span> Disagree</label>
                 <label><input type="radio" name="q42" value="P"><span></span> Strongly Disagree</label>
             </div>
-            <div class="question">43. I enjoy spending time alone to recharge.</div>
+            <div class="question">43. I prefer working in teams rather than alone.</div>
             <div class="options">
-                <label><input type="radio" name="q43" value="I"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q43" value="I"><span></span> Agree</label>
-                <label><input type="radio" name="q43" value="E"><span></span> Neutral</label>
-                <label><input type="radio" name="q43" value="E"><span></span> Disagree</label>
-                <label><input type="radio" name="q43" value="E"><span></span> Strongly Disagree</label>
+                <label><input type="radio" name="q43" value="E"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q43" value="E"><span></span> Agree</label>
+                <label><input type="radio" name="q43" value="I"><span></span> Neutral</label>
+                <label><input type="radio" name="q43" value="I"><span></span> Disagree</label>
+                <label><input type="radio" name="q43" value="I"><span></span> Strongly Disagree</label>
             </div>
             <div class="question">44. I rely on past experiences when making decisions.</div>
             <div class="options">
@@ -574,15 +570,22 @@
                 <label><input type="radio" name="q44" value="N"><span></span> Disagree</label>
                 <label><input type="radio" name="q44" value="N"><span></span> Strongly Disagree</label>
             </div>
-            <div class="question">45. I enjoy meeting new people and socializing.</div>
+            <div class="question">45. I prefer spontaneity over structured plans.</div>
             <div class="options">
-                <label><input type="radio" name="q45" value="E"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q45" value="E"><span></span> Agree</label>
-                <label><input type="radio" name="q45" value="I"><span></span> Neutral</label>
-                <label><input type="radio" name="q45" value="I"><span></span> Disagree</label>
-                <label><input type="radio" name="q45" value="I"><span></span> Strongly Disagree</label>
+                <label><input type="radio" name="q45" value="P"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q45" value="P"><span></span> Agree</label>
+                <label><input type="radio" name="q45" value="J"><span></span> Neutral</label>
+                <label><input type="radio" name="q45" value="J"><span></span> Disagree</label>
+                <label><input type="radio" name="q45" value="J"><span></span> Strongly Disagree</label>
             </div>
-            <button class="btn" onclick="submitQuiz()">Submit</button>
+            <div class="question">46. I make decisions based on logic rather than emotions.</div>
+            <div class="options">
+                <label><input type="radio" name="q46" value="T"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q46" value="T"><span></span> Agree</label>
+                <label><input type="radio" name="q46" value="F"><span></span> Neutral</label>
+                <label><input type="radio" name="q46" value="F"><span></span> Disagree</label>
+                <label><input type="radio" name="q46" value="F"><span></span> Strongly Disagree</label>
+            </div>
         </form>
     </div>
 </body>
@@ -672,37 +675,29 @@
     <div class="container">
         <h2>Personality Test</h2>
         <form id="quiz-form">
-            <div class="question">46. I make decisions based on logic rather than emotions.</div>
+            <div class="question">47. I like to focus on details rather than the big picture.</div>
             <div class="options">
-                <label><input type="radio" name="q46" value="T"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q46" value="T"><span></span> Agree</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Neutral</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Disagree</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Strongly Disagree</label>
+                <label><input type="radio" name="q47" value="S"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q47" value="S"><span></span> Agree</label>
+                <label><input type="radio" name="q47" value="N"><span></span> Neutral</label>
+                <label><input type="radio" name="q47" value="N"><span></span> Disagree</label>
+                <label><input type="radio" name="q47" value="N"><span></span> Strongly Disagree</label>
             </div>
-            <div class="question">47. I prefer a well-structured plan over flexibility.</div>
+            <div class="question">48. I enjoy structured routines and predictability in my daily life.</div>
             <div class="options">
-                <label><input type="radio" name="q47" value="J"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q47" value="J"><span></span> Agree</label>
-                <label><input type="radio" name="q47" value="P"><span></span> Neutral</label>
-                <label><input type="radio" name="q47" value="P"><span></span> Disagree</label>
-                <label><input type="radio" name="q47" value="P"><span></span> Strongly Disagree</label>
+                <label><input type="radio" name="q48" value="J"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q48" value="J"><span></span> Agree</label>
+                <label><input type="radio" name="q48" value="P"><span></span> Neutral</label>
+                <label><input type="radio" name="q48" value="P"><span></span> Disagree</label>
+                <label><input type="radio" name="q48" value="P"><span></span> Strongly Disagree</label>
             </div>
-            <div class="question">48. I enjoy debating and discussing different viewpoints.</div>
+            <div class="question">49. I make decisions based on gut feelings rather than analysis.</div>
             <div class="options">
-                <label><input type="radio" name="q48" value="T"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q48" value="T"><span></span> Agree</label>
-                <label><input type="radio" name="q48" value="F"><span></span> Neutral</label>
-                <label><input type="radio" name="q48" value="F"><span></span> Disagree</label>
-                <label><input type="radio" name="q48" value="F"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">49. I often trust my intuition when making decisions.</div>
-            <div class="options">
-                <label><input type="radio" name="q49" value="N"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q49" value="N"><span></span> Agree</label>
-                <label><input type="radio" name="q49" value="S"><span></span> Neutral</label>
-                <label><input type="radio" name="q49" value="S"><span></span> Disagree</label>
-                <label><input type="radio" name="q49" value="S"><span></span> Strongly Disagree</label>
+                <label><input type="radio" name="q49" value="F"><span></span> Strongly Agree</label>
+                <label><input type="radio" name="q49" value="F"><span></span> Agree</label>
+                <label><input type="radio" name="q49" value="T"><span></span> Neutral</label>
+                <label><input type="radio" name="q49" value="T"><span></span> Disagree</label>
+                <label><input type="radio" name="q49" value="T"><span></span> Strongly Disagree</label>
             </div>
             <div class="question">50. I prefer brainstorming and exploring new ideas over following a fixed plan.</div>
             <div class="options">
@@ -712,8 +707,8 @@
                 <label><input type="radio" name="q50" value="S"><span></span> Disagree</label>
                 <label><input type="radio" name="q50" value="S"><span></span> Strongly Disagree</label>
             </div>
-            <button class="btn" onclick="submitQuiz()">Submit</button>
         </form>
+        <button class="btn" type="button" onclick="submitQuiz()">Get Your Results!</button>
     </div>
 </body>
 </html>
@@ -722,99 +717,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personality Quiz</title>
-    <style>
-        body {
-            font-family: 'Merriweather', serif;
-            background: #FFEAEA;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            width: 50%;
-            margin: auto;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            font-family: 'Abril Fatface', cursive;
-            color: #6B3E3E;
-        }
-        .question {
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        .options {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .options label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-        }
-        .options input {
-            display: none;
-        }
-        .options label span {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid #6B3E3E;
-            transition: 0.3s;
-        }
-        .options input:checked + span {
-            background: #D47777;
-            border-color: #D47777;
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #D47777;
-            color: white;
-            border-radius: 8px;
-        }
-        .btn:hover {
-            background-color: #B35E5E;
-        }
-    </style>
-    <script>
-        function submitQuiz() {
-            window.location.href = "results.html";
-        }
-    </script>
-</head>
-<body>
-    <div class="container">
-        <h2>Personality Test</h2>
-        <form id="quiz-form">
-            <button class="btn" onclick="submitQuiz()">Submit</button>
-        </form>
-    </div>
-</body>
-</html>
-
-<!-- results.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>MBTI Results</title>
     <style>
         body {
             font-family: 'Merriweather', serif;
@@ -849,15 +752,55 @@
             background-color: #B35E5E;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Your Personality Type</h2>
-        <p id="result-text"></p>
-        <p>Discover more about your MBTI type on our <a href="index.html">main website</a>.</p>
-    </div>
     <script>
-        document.getElementById("result-text").innerText = "Your personality type is ... (placeholder)";
+        function loadResults() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mbtiType = urlParams.get('type') || 'Unknown';
+            
+            const descriptions = {
+                "INTJ": {
+                    "funFact": "Known as the 'Mastermind' for their strategic thinking!",
+                    "strengths": "Highly logical, independent, and strategic.",
+                    "weaknesses": "Can be overly critical and struggle with emotions."
+                },
+                "ENTP": {
+                    "funFact": "Loves debating and thrives on intellectual challenges!",
+                    "strengths": "Creative, energetic, and good at problem-solving.",
+                    "weaknesses": "Easily bored and can be argumentative."
+                },
+                "INFJ": {
+                    "funFact": "One of the rarest personality types, deeply insightful!",
+                    "strengths": "Compassionate, visionary, and good at reading people.",
+                    "weaknesses": "Can be overly idealistic and private."
+                },
+                "ESFP": {
+                    "funFact": "Loves to entertain and bring excitement to any gathering!",
+                    "strengths": "Charismatic, fun-loving, and great at improvising.",
+                    "weaknesses": "Can struggle with long-term planning."
+                }
+            };
+            
+            const result = descriptions[mbtiType] || {
+                "funFact": "Your MBTI type is unique!",
+                "strengths": "You have a great mix of qualities.",
+                "weaknesses": "Everyone has room to grow!"
+            };
+            
+            document.getElementById("mbti-type").textContent = mbtiType;
+            document.getElementById("fun-fact").textContent = result.funFact;
+            document.getElementById("strengths").textContent = result.strengths;
+            document.getElementById("weaknesses").textContent = result.weaknesses;
+        }
     </script>
+</head>
+<body onload="loadResults()">
+    <div class="container">
+        <h2>Your MBTI Personality Type</h2>
+        <h3 id="mbti-type">Loading...</h3>
+        <p><strong>Fun Fact:</strong> <span id="fun-fact"></span></p>
+        <p><strong>Strengths:</strong> <span id="strengths"></span></p>
+        <p><strong>Weaknesses:</strong> <span id="weaknesses"></span></p>
+        <button class="btn" onclick="window.location.href='https://yourmainwebsite.com'">Go to Main Website</button>
+    </div>
 </body>
 </html>
