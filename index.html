@@ -495,8 +495,104 @@
                 <label><input type="radio" name="q46" value="F"><span></span> Disagree</label>
                 <label><input type="radio" name="q46" value="F"><span></span> Strongly Disagree</label>
     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Quiz</title>
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background: #FFEAEA;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 50%;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-family: 'Abril Fatface', cursive;
+            color: #6B3E3E;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        .options input {
+            display: none;
+        }
+        .options label span {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #6B3E3E;
+            transition: 0.3s;
+        }
+        .options input:checked + span {
+            background: #D47777;
+            border-color: #D47777;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #D47777;
+            color: white;
+            border-radius: 8px;
+        }
+        .btn:hover {
+            background-color: #B35E5E;
+        }
+    </style>
+    <script>
+        function submitQuiz() {
+            // Collect user answers
+            let result = "";
+            const letters = { "E": 0, "I": 0, "S": 0, "N": 0, "T": 0, "F": 0, "J": 0, "P": 0 };
 
- </div>
+            for (let i = 1; i <= 50; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer) {
+                    letters[answer.value]++;
+                }
+            }
+
+            // Determine MBTI type
+            result += (letters["E"] >= letters["I"]) ? "E" : "I";
+            result += (letters["S"] >= letters["N"]) ? "S" : "N";
+            result += (letters["T"] >= letters["F"]) ? "T" : "F";
+            result += (letters["J"] >= letters["P"]) ? "J" : "P";
+
+            // Redirect to results page with MBTI type as parameter
+            window.location.href = `results.html?type=${result}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>MBTI Personality Quiz</h2>
+        <form id="quizForm">
             <div class="question">41. I enjoy thinking about abstract concepts.</div>
             <div class="options">
                 <label><input type="radio" name="q41" value="N"><span></span> Strongly Agree</label>
@@ -513,62 +609,6 @@
                 <label><input type="radio" name="q42" value="P"><span></span> Disagree</label>
                 <label><input type="radio" name="q42" value="P"><span></span> Strongly Disagree</label>
             </div>
-            <div class="question">43. I prefer working in teams rather than alone.</div>
-            <div class="options">
-                <label><input type="radio" name="q43" value="E"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q43" value="E"><span></span> Agree</label>
-                <label><input type="radio" name="q43" value="I"><span></span> Neutral</label>
-                <label><input type="radio" name="q43" value="I"><span></span> Disagree</label>
-                <label><input type="radio" name="q43" value="I"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">44. I rely on past experiences when making decisions.</div>
-            <div class="options">
-                <label><input type="radio" name="q44" value="S"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q44" value="S"><span></span> Agree</label>
-                <label><input type="radio" name="q44" value="N"><span></span> Neutral</label>
-                <label><input type="radio" name="q44" value="N"><span></span> Disagree</label>
-                <label><input type="radio" name="q44" value="N"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">45. I prefer spontaneity over structured plans.</div>
-            <div class="options">
-                <label><input type="radio" name="q45" value="P"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q45" value="P"><span></span> Agree</label>
-                <label><input type="radio" name="q45" value="J"><span></span> Neutral</label>
-                <label><input type="radio" name="q45" value="J"><span></span> Disagree</label>
-                <label><input type="radio" name="q45" value="J"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">46. I make decisions based on logic rather than emotions.</div>
-            <div class="options">
-                <label><input type="radio" name="q46" value="T"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q46" value="T"><span></span> Agree</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Neutral</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Disagree</label>
-                <label><input type="radio" name="q46" value="F"><span></span> Strongly Disagree</label>
-
-                    <div class="question">47. I like to focus on details rather than the big picture.</div>
-            <div class="options">
-                <label><input type="radio" name="q47" value="S"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q47" value="S"><span></span> Agree</label>
-                <label><input type="radio" name="q47" value="N"><span></span> Neutral</label>
-                <label><input type="radio" name="q47" value="N"><span></span> Disagree</label>
-                <label><input type="radio" name="q47" value="N"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">48. I enjoy structured routines and predictability in my daily life.</div>
-            <div class="options">
-                <label><input type="radio" name="q48" value="J"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q48" value="J"><span></span> Agree</label>
-                <label><input type="radio" name="q48" value="P"><span></span> Neutral</label>
-                <label><input type="radio" name="q48" value="P"><span></span> Disagree</label>
-                <label><input type="radio" name="q48" value="P"><span></span> Strongly Disagree</label>
-            </div>
-            <div class="question">49. I make decisions based on gut feelings rather than analysis.</div>
-            <div class="options">
-                <label><input type="radio" name="q49" value="F"><span></span> Strongly Agree</label>
-                <label><input type="radio" name="q49" value="F"><span></span> Agree</label>
-                <label><input type="radio" name="q49" value="T"><span></span> Neutral</label>
-                <label><input type="radio" name="q49" value="T"><span></span> Disagree</label>
-                <label><input type="radio" name="q49" value="T"><span></span> Strongly Disagree</label>
-            </div>
             <div class="question">50. I prefer brainstorming and exploring new ideas over following a fixed plan.</div>
             <div class="options">
                 <label><input type="radio" name="q50" value="N"><span></span> Strongly Agree</label>
@@ -576,13 +616,9 @@
                 <label><input type="radio" name="q50" value="S"><span></span> Neutral</label>
                 <label><input type="radio" name="q50" value="S"><span></span> Disagree</label>
                 <label><input type="radio" name="q50" value="S"><span></span> Strongly Disagree</label>
-            </div>
-        </form>
-        <button class="btn" type="button" onclick="submitQuiz()">Get Your Results!</button>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
+        </div>
+
+            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -628,26 +664,22 @@
             const mbtiType = urlParams.get('type') || 'Unknown';
             
             const descriptions = {
-                "INTJ": {
-                    "funFact": "Known as the 'Mastermind' for their strategic thinking!",
-                    "strengths": "Highly logical, independent, and strategic.",
-                    "weaknesses": "Can be overly critical and struggle with emotions."
-                },
-                "ENTP": {
-                    "funFact": "Loves debating and thrives on intellectual challenges!",
-                    "strengths": "Creative, energetic, and good at problem-solving.",
-                    "weaknesses": "Easily bored and can be argumentative."
-                },
-                "INFJ": {
-                    "funFact": "One of the rarest personality types, deeply insightful!",
-                    "strengths": "Compassionate, visionary, and good at reading people.",
-                    "weaknesses": "Can be overly idealistic and private."
-                },
-                "ESFP": {
-                    "funFact": "Loves to entertain and bring excitement to any gathering!",
-                    "strengths": "Charismatic, fun-loving, and great at improvising.",
-                    "weaknesses": "Can struggle with long-term planning."
-                }
+                "INTJ": { "funFact": "Known as the 'Mastermind' for their strategic thinking!", "strengths": "Logical, independent, strategic.", "weaknesses": "Can be overly critical and struggle with emotions." },
+                "ENTP": { "funFact": "Loves debating and thrives on intellectual challenges!", "strengths": "Creative, energetic, good at problem-solving.", "weaknesses": "Easily bored and can be argumentative." },
+                "INFJ": { "funFact": "One of the rarest personality types, deeply insightful!", "strengths": "Compassionate, visionary, good at reading people.", "weaknesses": "Can be overly idealistic and private." },
+                "ESFP": { "funFact": "Loves to entertain and bring excitement to any gathering!", "strengths": "Charismatic, fun-loving, great at improvising.", "weaknesses": "Can struggle with long-term planning." },
+                "ISTJ": { "funFact": "The most responsible and organized of all types!", "strengths": "Reliable, detail-oriented, disciplined.", "weaknesses": "Can be inflexible and struggle with emotions." },
+                "ISFJ": { "funFact": "Loves helping others and maintaining harmony!", "strengths": "Loyal, empathetic, hardworking.", "weaknesses": "Tends to avoid conflict and overwork themselves." },
+                "ESTJ": { "funFact": "Natural-born leaders who thrive on structure!", "strengths": "Efficient, organized, decisive.", "weaknesses": "Can be stubborn and dismiss emotions." },
+                "ESFJ": { "funFact": "Always the first to offer help and support!", "strengths": "Warm, sociable, great at teamwork.", "weaknesses": "Can struggle with criticism and people-pleasing." },
+                "ISTP": { "funFact": "The most practical and hands-on of all types!", "strengths": "Logical, independent, good problem-solvers.", "weaknesses": "Can be impulsive and struggle with long-term planning." },
+                "ISFP": { "funFact": "Highly artistic and live in the moment!", "strengths": "Creative, gentle, open-minded.", "weaknesses": "Can be sensitive and avoid long-term commitments." },
+                "ESTP": { "funFact": "Loves adventure and thrives on excitement!", "strengths": "Energetic, bold, quick-thinking.", "weaknesses": "Can be reckless and struggle with routines." },
+                "ENTJ": { "funFact": "Natural-born strategists and leaders!", "strengths": "Assertive, ambitious, confident.", "weaknesses": "Can be too blunt and struggle with emotions." },
+                "ENFP": { "funFact": "The most spontaneous and enthusiastic of all types!", "strengths": "Energetic, creative, inspiring.", "weaknesses": "Can be disorganized and struggle with follow-through." },
+                "ENFJ": { "funFact": "Loves motivating and inspiring others!", "strengths": "Charismatic, empathetic, great communicators.", "weaknesses": "Can be too idealistic and take on too much." },
+                "INTP": { "funFact": "Always seeking knowledge and solving complex problems!", "strengths": "Curious, logical, innovative.", "weaknesses": "Can be absent-minded and struggle with emotions." },
+                "INFP": { "funFact": "Highly creative and driven by their values!", "strengths": "Empathetic, imaginative, open-minded.", "weaknesses": "Can be overly sensitive and struggle with structure." }
             };
             
             const result = descriptions[mbtiType] || {
@@ -674,5 +706,3 @@
     </div>
 </body>
 </html>
-
-        
